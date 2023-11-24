@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Notification Dropdown</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".notification_icon .fa-bell").click(function(){
+				$(".dropdown").toggleClass("active");
+			})
+		});
+	</script>
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="notification_wrap">
+		<div class="notification_icon" id="playNotification">
+			<audio id="notificationSound" src="notification.mp3"></audio>			
+			<i class="fas fa-bell"></i>
+			<div class="notification-badge">+2</div>
+		</div>
+		<div class="dropdown">
+			<div class="notify_item">
+				<div class="notify_img">
+					<img src="images/nazi.jpeg" alt="profile_pic" class="rounded-image" style="width: 50px">
+				</div>
+				<div class="notify_info">
+					<p>Faith Nazi<span>Followed You</span></p>
+					<span class="notify_time">10 minutes ago</span>
+				</div>
+			</div>
+			<div class="notify_item">
+				<div class="notify_img">
+					<img src="images/jake.jpeg" alt="profile_pic" class="rounded-image" style="width: 50px">
+				</div>
+				<div class="notify_info">
+					<p>Jake Mwangi<span>Followed You</span></p>
+					<span class="notify_time">55 minutes ago</span>
+				</div>
+			</div>
+			<div class="notify_item">
+				<div class="notify_img">
+					<img src="images/jake.jpeg" alt="profile_pic" class="rounded-image" style="width: 50px">
+				</div>
+				<div class="notify_info">
+					<p>Khamis Kingi<span>Followed You</span></p>
+					<span class="notify_time">55 minutes ago</span>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<audio id="notificationSound" src="notification.mp3"></audio>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+	  var notification = document.getElementById('playNotification');
+	  var notificationSound = document.getElementById('notificationSound');
+  
+	  function showNotification() {
+		notification.style.display = 'block';
+		setTimeout(function () {
+		  notificationSound.play();
+		}, 1000); 
+	  }
+  
+	  function hideNotification() {
+		notification.style.display = 'none';
+	  }
+  
+	  showNotification();
+	});
+  </script>
+</body>
+</html>
